@@ -1,0 +1,6 @@
+import random
+text = "this is a simple bigram model example"
+words = text.split()
+bigrams = [(words[i], words[i + 1]) for i in range(len(words) - 1)]
+result = [random.choice(bigrams)[0] for _ in range(10)]
+print("Generated text:", ' '.join(result))
