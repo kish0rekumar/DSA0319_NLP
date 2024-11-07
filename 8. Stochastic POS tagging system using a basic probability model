@@ -1,0 +1,11 @@
+import nltk
+patterns = [
+    (r'.*ing$', 'VBG'),    # gerunds
+    (r'.*ed$', 'VBD'),     # past tense
+    (r'.*es$', 'VBZ'),     # 3rd person singular present
+    (r'.*ly$', 'RB'),      # adverbs
+    (r'.*', 'NN')          # nouns (default)
+]
+regexp_tagger = nltk.RegexpTagger(patterns)
+sentence = "The cat is eating quietly".split()
+print(regexp_tagger.tag(sentence))
